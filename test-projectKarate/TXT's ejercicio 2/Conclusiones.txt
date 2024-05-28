@@ -1,0 +1,50 @@
+Informe de Hallazgos y Conclusiones del Ejercicio de Prueba de Servicios REST (PetStore API)
+
+Introducción
+Se realizaron pruebas de servicios REST utilizando la documentación de la PetStore disponible en https://petstore.swagger.io/. Las pruebas incluyeron las siguientes operaciones:
+1. Crear un usuario
+2. Buscar el usuario creado
+3. Actualizar el nombre y el correo del usuario
+4. Buscar el usuario actualizado
+5. Eliminar el usuario
+
+Herramientas Utilizadas
+Para llevar a cabo este ejercicio se utilizó:
+- Postman para la ejecución de las pruebas de servicios REST.
+- IntelliJ IDEA 2024.1.1 (Community Edition) para la gestión del entorno de desarrollo.
+- Librerías de Karate
+- El código fuente del proyecto está disponible en el siguiente repositorio de GitHub: [Proyecto PetStore en GitHub](https://github.com/ncaiza2010/petstore2).
+
+Descripción del Proceso
+1. Configuración del Entorno:
+   Se configuró el entorno de pruebas siguiendo las instrucciones detalladas en el archivo README adjunto. La configuración incluyó la instalación de IntelliJ IDEA y la configuración de Postman para la ejecución de las pruebas REST.
+
+2. Ejecución de la Prueba:
+   Las pruebas se ejecutaron siguiendo los pasos especificados:
+   - Crear un Usuario: Se envió una solicitud POST para crear un nuevo usuario con datos específicos.
+   - Buscar el Usuario Creado: Se envió una solicitud GET para buscar el usuario recién creado y verificar su existencia.
+   - Actualizar el Nombre y el Correo del Usuario:** Se envió una solicitud PUT para actualizar los datos del usuario.
+   - Buscar el Usuario Actualizado: Se envió una solicitud GET para verificar que los datos del usuario fueron actualizados correctamente.
+   - Eliminar el Usuario: Se envió una solicitud DELETE para eliminar el usuario creado y verificar su eliminación.
+
+Hallazgos
+Durante la ejecución de las pruebas, se observó el siguiente comportamiento inesperado:
+- Creación de Usuarios con Nombres Duplicados:
+  Se detectó que es posible crear múltiples usuarios con el mismo nombre, a pesar de la secuencialidad del ID asignado. Esto puede causar confusión y dificultades en la gestión de usuarios únicos.
+
+Conclusiones
+1. Correcta Ejecución del Flujo de Prueba:
+   El flujo de prueba se ejecutó correctamente, y todas las operaciones (creación, búsqueda, actualización y eliminación de usuarios) se realizaron según lo esperado. Esto indica que las APIs de la PetStore funcionan adecuadamente para las operaciones básicas de usuario.
+
+2. Necesidad de Restricciones para Nombres de Usuario Duplicados:
+   El problema identificado en la creación de usuarios con nombres duplicados es significativo, ya que puede generar inconsistencias y complicaciones en la gestión de usuarios. Es necesario implementar restricciones para asegurar que los nombres de usuario sean únicos.
+
+3. Recomendaciones:
+   - Implementar validaciones en el backend para garantizar que los nombres de usuario sean únicos, actualizar la documentación de la API para especificar claramente las restricciones de unicidad en los campos críticos.
+   - Realizar pruebas adicionales para validar la corrección del problema y asegurar que no existan otros errores relacionados con la gestión de usuarios.
+Anexos
+- Instrucciones de configuración del entorno de pruebas detalladas en el archivo README.
+- Scripts de prueba utilizados en la ejecución de la prueba de servicios REST.
+- [Código fuente del proyecto de prueba en GitHub](https://github.com/ncaiza2010/petstore2).
+
+Con estos hallazgos y conclusiones, se espera mejorar la funcionalidad y fiabilidad de las APIs de la PetStore, proporcionando una mejor experiencia de usuario y asegurando la integridad de los datos.
